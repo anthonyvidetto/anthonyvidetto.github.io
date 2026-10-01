@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthony Videtto | Real Estate Finance & Underwriting Portfolio</title>
+  <meta name="description" content="Portfolio of Anthony Videtto featuring real estate pro forma models, deal underwriting analysis, and financial accounting projects.">
+
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --surface-card: #182234;
+      --surface-border: #243249;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: rgba(37, 99, 235, 0.15);
+      --accent: #10b981;
+      --accent-light: rgba(16, 185, 129, 0.12);
+      --accent-gold: #f59e0b;
+      --tag-bg: #1e293b;
+      --radius: 12px;
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-card: #f1f5f9;
+      --surface-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --primary: #2563eb;
+      --primary-hover: #1e40af;
+      --primary-light: rgba(37, 99, 235, 0.1);
+      --accent: #059669;
+      --accent-light: rgba(5, 150, 105, 0.1);
+      --accent-gold: #d97706;
+      --tag-bg: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background-color: rgba(9, 13, 22, 0.85);
+      border-bottom: 1px solid var(--surface-border);
+      transition: background-color 0.3s ease;
+    }
+
+    [data-theme="light"] header {
+      background-color: rgba(248, 250, 252, 0.85);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .theme-toggle-btn {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+      transform: rotate(15deg);
+    }
+
+    /* Hero & Personal Statement */
+    .hero {
+      padding: 60px 0 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.15); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* REQUIRED SECTION 1: Personal Statement */
+    .statement-box {
+      background: linear-gradient(145deg, var(--surface), var(--surface-card));
+      border: 1px solid var(--surface-border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .personal-statement-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-main);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 0.98rem;
+    }
+
+    /* REQUIRED SECTION 2: Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .skill-category-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .skill-category-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .skill-category-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .skill-category-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .skill-pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      background: var(--tag-bg);
+      border: 1px solid var(--surface-border);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* REQUIRED SECTION 3: Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 16px;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .project-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .project-summary {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .project-highlights {
+      list-style: none;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-highlights li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .project-highlights li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tech-tag {
+      font-size: 0.78rem;
+      background: var(--tag-bg);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface-card);
+      color: var(--text-main);
+      border: 1px solid var(--surface-border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--tag-bg);
+      border-color: var(--text-muted);
+    }
+
+    /* Contact & Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--surface-border);
+      background: var(--surface);
+      padding: 40px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .contact-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Modal for Quick Overviews */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 30px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: var(--text-main);
+    }
+
+    .modal-metric-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+
+    .modal-metric-table th, .modal-metric-table td {
+      border: 1px solid var(--surface-border);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .modal-metric-table th {
+      background: var(--surface-card);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.1rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .personal-statement-text {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">
+        <span>Anthony Videtto</span>
+        <span class="brand-badge">Finance & Real Estate</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#statement">Statement</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <span id="themeIcon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Headline -->
+    <div class="hero">
+      <div class="hero-meta">
+        <div class="status-pill">
+          <span class="status-indicator"></span>
+          Actively Seeking Real Estate Finance & Underwriting Roles
+        </div>
+      </div>
+      <h1>Quantitative Rigor in <span>Real Estate Underwriting</span> & Financial Analysis.</h1>
+    </div>
+
+    <!-- REQUIRED SECTION 1: Personal Statement -->
+    <section id="statement" style="padding-top: 0;">
+      <div class="statement-box">
+        <div class="section-eyebrow">
+          <span>◆</span> Personal Statement
+        </div>
+        <p class="personal-statement-text">
+          Finance professional specializing in real estate investment analysis, dedicated to delivering precise deal underwriting, comprehensive multi-year pro forma cash flow models, and quantitative due diligence that de-risk capital and maximize investor returns.
+        </p>
+      </div>
+    </section>
+
+    <!-- REQUIRED SECTION 2: Skills -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-eyebrow">Expertise</div>
+        <h2 class="section-title">Technical & Professional Skills</h2>
+        <p class="section-desc">Core competencies in financial modeling, valuation, spreadsheet architecture, and transaction due diligence.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="skill-category-card">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">🏢</div>
+            <h3 class="skill-category-title">Real Estate & Underwriting</h3>
+          </div>
+          <div class="skill-pill-list">
+            <span class="skill-pill">Pro Forma Modeling</span>
+            <span class="skill-pill">NOI Projections</span>
+            <span class="skill-pill">DSCR & Debt Sizing</span>
+            <span class="skill-pill">Exit Cap Rates</span>
+            <span class="skill-pill">Levered / Unlevered IRR</span>
+            <span class="skill-pill">Lease Rollover Analysis</span>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="skill-category-card">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">📊</div>
+            <h3 class="skill-category-title">Financial Modeling & Excel</h3>
+          </div>
+          <div class="skill-pill-list">
+            <span class="skill-pill">Advanced Financial Functions</span>
+            <span class="skill-pill">Dynamic Amortization Tables</span>
+            <span class="skill-pill">Two-Way Sensitivity Tables</span>
+            <span class="skill-pill">INDEX / MATCH / XLOOKUP</span>
+            <span class="skill-pill">Scenario & Stress Testing</span>
+            <span class="skill-pill">DCF Valuation</span>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="skill-category-card">
+          <div class="skill-category-header">
+            <div class="skill-category-icon">📑</div>
+            <h3 class="skill-category-title">Financial Accounting & Analysis</h3>
+          </div>
+          <div class="skill-pill-list">
+            <span class="skill-pill">3-Statement Integration</span>
+            <span class="skill-pill">General Ledger Accounting</span>
+            <span class="skill-pill">Balance Sheet Reconciliation</span>
+            <span class="skill-pill">DuPont Ratio Analysis</span>
+            <span class="skill-pill">Working Capital Analysis</span>
+            <span class="skill-pill">Audit & Due Diligence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REQUIRED SECTION 3: Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-desc">Applied projects demonstrating hands-on proficiency in property cash flow modeling, deal underwriting, and corporate accounting.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: Real Estate Pro Forma Project -->
+        <article class="project-card">
+          <div>
+            <div class="project-top">
+              <h3 class="project-title">1. Real Estate Pro Forma Financial Model</h3>
+              <span class="project-badge">10-Year Pro Forma</span>
+            </div>
+            <p class="project-summary">
+              A comprehensive 10-year dynamic discounted cash flow (DCF) pro forma forecasting property-level operational performance, debt obligations, and equity returns for commercial real estate assets.
+            </p>
+            <ul class="project-highlights">
+              <li>Engineered dynamic cash flow waterfall forecasting Gross Potential Rent (GPR), physical/economic vacancy, and detailed operating expenses (OpEx).</li>
+              <li>Calculated clean Net Operating Income (NOI), Debt Service Coverage Ratios (DSCR), and debt-yield thresholds across various financing scenarios.</li>
+              <li>Integrated two-way sensitivity matrices analyzing unlevered/levered IRR and Equity Multiple sensitivity to varying exit cap rates and holding periods.</li>
+            </ul>
+            <div class="tech-stack-row">
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">DCF Waterfall</span>
+              <span class="tech-tag">Sensitivity Tables</span>
+              <span class="tech-tag">Capital Markets</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <button class="btn btn-primary" onclick="openModal('proforma')">View Model Summary</button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 2: Real Estate Deal Underwriting Project -->
+        <article class="project-card">
+          <div>
+            <div class="project-top">
+              <h3 class="project-title">2. Commercial Real Estate Deal Underwriting</h3>
+              <span class="project-badge">Acquisition Analysis</span>
+            </div>
+            <p class="project-summary">
+              An institutional-style underwriting assessment evaluating a prospective real estate investment property, factoring in historical rent rolls, trailing twelve-month (T12) financials, and market risks.
+            </p>
+            <ul class="project-highlights">
+              <li>Audited rent rolls and lease terms to identify expiration cliffs, tenant credit risks, and mark-to-market upside potential.</li>
+              <li>Normalized historical T12 operational expenses, adjusting for non-recurring maintenance and real estate tax reassessments post-sale.</li>
+              <li>Formulated an Investment Committee Underwriting Memorandum outlining return benchmarks, debt covenants, and downside mitigations.</li>
+            </ul>
+            <div class="tech-stack-row">
+              <span class="tech-tag">Rent Roll Audit</span>
+              <span class="tech-tag">T12 Normalization</span>
+              <span class="tech-tag">Underwriting Memo</span>
+              <span class="tech-tag">Risk Assessment</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <button class="btn btn-primary" onclick="openModal('underwriting')">View Underwriting Memo</button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub ↗</a>
+          </div>
+        </article>
+
+        <!-- Project 3: Excel Financial Accounting Project -->
+        <article class="project-card">
+          <div>
+            <div class="project-top">
+              <h3 class="project-title">3. Comprehensive Financial Accounting Model</h3>
+              <span class="project-badge">Financial Accounting</span>
+            </div>
+            <p class="project-summary">
+              An integrated Excel-based corporate financial accounting engine built to process journal entries through adjusted trial balances directly into fully integrated financial statements.
+            </p>
+            <ul class="project-highlights">
+              <li>Structured General Ledger and Trial Balance workflows ensuring dynamic balance validation and error checking across all debit/credit schedules.</li>
+              <li>Linked Income Statement, Balance Sheet, and Cash Flow Statement dynamically via cash balances, depreciation, and retained earnings.</li>
+              <li>Conducted full DuPont Framework liquidity, efficiency, and solvency ratio diagnostics to measure corporate health.</li>
+            </ul>
+            <div class="tech-stack-row">
+              <span class="tech-tag">3-Statement Model</span>
+              <span class="tech-tag">General Ledger</span>
+              <span class="tech-tag">Trial Balance</span>
+              <span class="tech-tag">Ratio Analysis</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <button class="btn btn-primary" onclick="openModal('accounting')">View Financial Ledger</button>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Project Modals -->
+  <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-card" id="modalContent" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-size: 1.25rem; font-weight: 700;">Project Details</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <div id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div class="container footer-content">
+      <div>
+        <p style="font-weight: 600; color: var(--text-main);">Anthony Videtto</p>
+        <p>Real Estate Finance & Underwriting • Ready for New Opportunities</p>
+      </div>
+      <ul class="contact-links">
+        <li><a href="mailto:anthony@example.com">Email Me</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Switcher Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElement = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    htmlElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Modal Details Data
+    const modalData = {
+      proforma: {
+        title: "Real Estate Pro Forma Model Overview",
+        html: `
+          <p style="margin-bottom: 12px; color: var(--text-muted);">
+            Summary breakdown of the pro forma structure, cash flow waterfall, and equity return metrics.
+          </p>
+          <table class="modal-metric-table">
+            <thead>
+              <tr>
+                <th>Model Component</th>
+                <th>Underwritten Basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Projection Period</td>
+                <td>10-Year Discrete Forecast + Terminal Year</td>
+              </tr>
+              <tr>
+                <td>Revenue Assumptions</td>
+                <td>Market rent growth (3.0% avg), 5.0% stabilized vacancy</td>
+              </tr>
+              <tr>
+                <td>Expense Modeling</td>
+                <td>Controllable OpEx grown at 2.5%, dynamic RE taxes</td>
+              </tr>
+              <tr>
+                <td>Debt Structuring</td>
+                <td>65% LTV Senior Loan, 30-year amort, interest reserve</td>
+              </tr>
+              <tr>
+                <td>Exit Valuation</td>
+                <td>Exit Cap Rate calculated with 50 bps expansion cushion</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">
+            * Full spreadsheet features dynamic Excel formula auditing and two-way sensitivity matrices.
+          </p>
+        `
+      },
+      underwriting: {
+        title: "Commercial Deal Underwriting Memo",
+        html: `
+          <p style="margin-bottom: 12px; color: var(--text-muted);">
+            Key diligence findings and investment committee recommendation criteria.
+          </p>
+          <table class="modal-metric-table">
+            <thead>
+              <tr>
+                <th>Diligence Focus</th>
+                <th>Underwriting Finding / Adjustment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rent Roll Verification</td>
+                <td>Identified 18% rollover in Year 2; factored in tenant TI/LC costs</td>
+              </tr>
+              <tr>
+                <td>T12 Normalization</td>
+                <td>Excluded $45k one-time historical repair; added real property tax reset</td>
+              </tr>
+              <tr>
+                <td>Capital Expenditures</td>
+                <td>Underwritten $350k immediate roof/HVAC replacement reserves</td>
+              </tr>
+              <tr>
+                <td>DSCR Cushion</td>
+                <td>Stabilized Debt Service Coverage maintained at 1.42x minimum</td>
+              </tr>
+            </tbody>
+          </table>
+        `
+      },
+      accounting: {
+        title: "Financial Accounting Engine Structure",
+        html: `
+          <p style="margin-bottom: 12px; color: var(--text-muted);">
+            Architecture of the automated three-statement model and trial balance workbook.
+          </p>
+          <table class="modal-metric-table">
+            <thead>
+              <tr>
+                <th>Workbook Section</th>
+                <th>Core Function & Integration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Journal & Ledger</td>
+                <td>Double-entry debit/credit ledger with automatic balance checks</td>
+              </tr>
+              <tr>
+                <td>Adjusted Trial Balance</td>
+                <td>Accruals, prepaid expenses, and depreciation scheduling</td>
+              </tr>
+              <tr>
+                <td>Integrated Statements</td>
+                <td>Net income flow-through to retained earnings & CFO cash sweep</td>
+              </tr>
+              <tr>
+                <td>DuPont Analysis</td>
+                <td>Multi-step breakdown of ROE into margins, turnover, and leverage</td>
+              </tr>
+            </tbody>
+          </table>
+        `
+      }
+    };
+
+    function openModal(projectKey) {
+      const data = modalData[projectKey];
+      if (!data) return;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBody').innerHTML = data.html;
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
