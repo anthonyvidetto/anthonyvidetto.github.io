@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anthony Videtto | Real Estate Finance & Underwriting Portfolio</title>
-  <meta name="description" content="Portfolio of Anthony Videtto featuring real estate pro forma models, deal underwriting analysis, and financial accounting projects.">
+  <title>Anthony Videtto | Finance & Real Estate Portfolio</title>
+  <meta name="description" content="Portfolio of Anthony Videtto featuring real estate pro forma models, deal underwriting analysis, and Excel business analytics & sales modeling.">
 
-  <!-- Inter Font -->
+  <!-- Inter & JetBrains Mono Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -281,6 +281,8 @@
       border-radius: var(--radius);
       padding: 24px;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
     }
 
     .skill-category-card:hover {
@@ -292,7 +294,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .skill-category-icon {
@@ -312,17 +314,25 @@
       font-weight: 600;
     }
 
+    .skill-category-subtext {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
     .skill-pill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: auto;
     }
 
     .skill-pill {
       background: var(--tag-bg);
       border: 1px solid var(--surface-border);
       color: var(--text-main);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       padding: 6px 12px;
       border-radius: 6px;
@@ -465,7 +475,7 @@
       border-color: var(--text-muted);
     }
 
-    /* Contact & Footer */
+    /* Footer & Contact */
     footer {
       margin-top: auto;
       border-top: 1px solid var(--surface-border);
@@ -499,7 +509,7 @@
       color: var(--primary);
     }
 
-    /* Modal for Quick Overviews */
+    /* Modals */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -521,7 +531,7 @@
       border: 1px solid var(--surface-border);
       border-radius: var(--radius);
       padding: 30px;
-      max-width: 650px;
+      max-width: 680px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
@@ -609,10 +619,10 @@
       <div class="hero-meta">
         <div class="status-pill">
           <span class="status-indicator"></span>
-          Actively Seeking Real Estate Finance & Underwriting Roles
+          Undergraduate in Finance & Real Estate
         </div>
       </div>
-      <h1>Quantitative Rigor in <span>Real Estate Underwriting</span> & Financial Analysis.</h1>
+      <h1>Bridging Quantitative Analysis, <span>Market Dynamics</span>, & Relationship Building.</h1>
     </div>
 
     <!-- REQUIRED SECTION 1: Personal Statement -->
@@ -622,7 +632,7 @@
           <span>◆</span> Personal Statement
         </div>
         <p class="personal-statement-text">
-          Finance professional specializing in real estate investment analysis, dedicated to delivering precise deal underwriting, comprehensive multi-year pro forma cash flow models, and quantitative due diligence that de-risk capital and maximize investor returns.
+          Pursuing a degree in finance with a concentration in real estate, I am deeply driven by the mechanics of capital markets and dedicated to building authentic professional relationships, seeking opportunities to deliver institutional-grade underwriting, dynamic cash flow modeling, and high-impact investment analysis.
         </p>
       </div>
     </section>
@@ -630,57 +640,61 @@
     <!-- REQUIRED SECTION 2: Skills -->
     <section id="skills">
       <div class="section-header">
-        <div class="section-eyebrow">Expertise</div>
-        <h2 class="section-title">Technical & Professional Skills</h2>
-        <p class="section-desc">Core competencies in financial modeling, valuation, spreadsheet architecture, and transaction due diligence.</p>
+        <div class="section-eyebrow">Core Competencies</div>
+        <h2 class="section-title">Technical, Analytical & Professional Skills</h2>
+        <p class="section-desc">Practical skill set developed across real estate pro forma modeling, financial analysis, investment diligence, and high-pressure operational leadership.</p>
       </div>
 
       <div class="skills-grid">
-        <!-- Skill 1 -->
+        <!-- Skill Group 1: Real Estate Finance & Underwriting -->
         <div class="skill-category-card">
           <div class="skill-category-header">
             <div class="skill-category-icon">🏢</div>
             <h3 class="skill-category-title">Real Estate & Underwriting</h3>
           </div>
+          <p class="skill-category-subtext">Commercial real estate cash flow forecasting, debt sizing, and acquisition diligence.</p>
           <div class="skill-pill-list">
-            <span class="skill-pill">Pro Forma Modeling</span>
+            <span class="skill-pill">Pro Forma Cash Flow</span>
             <span class="skill-pill">NOI Projections</span>
             <span class="skill-pill">DSCR & Debt Sizing</span>
             <span class="skill-pill">Exit Cap Rates</span>
             <span class="skill-pill">Levered / Unlevered IRR</span>
-            <span class="skill-pill">Lease Rollover Analysis</span>
+            <span class="skill-pill">Rent Roll Audits</span>
+            <span class="skill-pill">Lease Rollover Diligence</span>
           </div>
         </div>
 
-        <!-- Skill 2 -->
+        <!-- Skill Group 2: Financial Modeling & Analytical Toolset -->
         <div class="skill-category-card">
           <div class="skill-category-header">
             <div class="skill-category-icon">📊</div>
-            <h3 class="skill-category-title">Financial Modeling & Excel</h3>
+            <h3 class="skill-category-title">Financial Modeling & Analytics</h3>
           </div>
+          <p class="skill-category-subtext">Advanced spreadsheet mechanics, dynamic PivotTables, debt structuring, and quantitative sensitivity testing.</p>
           <div class="skill-pill-list">
-            <span class="skill-pill">Advanced Financial Functions</span>
-            <span class="skill-pill">Dynamic Amortization Tables</span>
+            <span class="skill-pill">Advanced Excel & PivotTables</span>
+            <span class="skill-pill">Net Profit / Margin Analysis</span>
+            <span class="skill-pill">Amortization Schedules</span>
             <span class="skill-pill">Two-Way Sensitivity Tables</span>
             <span class="skill-pill">INDEX / MATCH / XLOOKUP</span>
-            <span class="skill-pill">Scenario & Stress Testing</span>
-            <span class="skill-pill">DCF Valuation</span>
+            <span class="skill-pill">FINRA SIE (In Progress)</span>
           </div>
         </div>
 
-        <!-- Skill 3 -->
+        <!-- Skill Group 3: Client Relations & Operational Leadership -->
         <div class="skill-category-card">
           <div class="skill-category-header">
-            <div class="skill-category-icon">📑</div>
-            <h3 class="skill-category-title">Financial Accounting & Analysis</h3>
+            <div class="skill-category-icon">🤝</div>
+            <h3 class="skill-category-title">Client Relations & Leadership</h3>
           </div>
+          <p class="skill-category-subtext">Relationship management, market diligence, and proven execution under pressure.</p>
           <div class="skill-pill-list">
-            <span class="skill-pill">3-Statement Integration</span>
-            <span class="skill-pill">General Ledger Accounting</span>
-            <span class="skill-pill">Balance Sheet Reconciliation</span>
-            <span class="skill-pill">DuPont Ratio Analysis</span>
-            <span class="skill-pill">Working Capital Analysis</span>
-            <span class="skill-pill">Audit & Due Diligence</span>
+            <span class="skill-pill">Client Relationship Management</span>
+            <span class="skill-pill">Investment Committee Memos</span>
+            <span class="skill-pill">Capital Markets Research</span>
+            <span class="skill-pill">Property Maintenance & Turnover</span>
+            <span class="skill-pill">High-Pressure Execution</span>
+            <span class="skill-pill">Consultative Communication</span>
           </div>
         </div>
       </div>
@@ -691,7 +705,7 @@
       <div class="section-header">
         <div class="section-eyebrow">Portfolio</div>
         <h2 class="section-title">Selected Projects</h2>
-        <p class="section-desc">Applied projects demonstrating hands-on proficiency in property cash flow modeling, deal underwriting, and corporate accounting.</p>
+        <p class="section-desc">Practical projects showcasing pro forma modeling, commercial deal underwriting, and advanced Excel business analytics.</p>
       </div>
 
       <div class="projects-grid">
@@ -703,16 +717,16 @@
               <span class="project-badge">10-Year Pro Forma</span>
             </div>
             <p class="project-summary">
-              A comprehensive 10-year dynamic discounted cash flow (DCF) pro forma forecasting property-level operational performance, debt obligations, and equity returns for commercial real estate assets.
+              A comprehensive 10-year discounted cash flow (DCF) model forecasting property-level operational performance, capital expenditure budgeting, and investor returns.
             </p>
             <ul class="project-highlights">
-              <li>Engineered dynamic cash flow waterfall forecasting Gross Potential Rent (GPR), physical/economic vacancy, and detailed operating expenses (OpEx).</li>
-              <li>Calculated clean Net Operating Income (NOI), Debt Service Coverage Ratios (DSCR), and debt-yield thresholds across various financing scenarios.</li>
-              <li>Integrated two-way sensitivity matrices analyzing unlevered/levered IRR and Equity Multiple sensitivity to varying exit cap rates and holding periods.</li>
+              <li>Engineered dynamic cash flow waterfall forecasting Gross Potential Rent (GPR), credit loss, vacancy, and operating expenses (OpEx).</li>
+              <li>Calculated clean Net Operating Income (NOI), Debt Service Coverage Ratios (DSCR), and debt yields across varying interest rate regimes.</li>
+              <li>Constructed two-way sensitivity matrices examining unlevered/levered IRR and Equity Multiples relative to exit cap rates and hold periods.</li>
             </ul>
             <div class="tech-stack-row">
               <span class="tech-tag">Microsoft Excel</span>
-              <span class="tech-tag">DCF Waterfall</span>
+              <span class="tech-tag">DCF Modeling</span>
               <span class="tech-tag">Sensitivity Tables</span>
               <span class="tech-tag">Capital Markets</span>
             </div>
@@ -731,18 +745,18 @@
               <span class="project-badge">Acquisition Analysis</span>
             </div>
             <p class="project-summary">
-              An institutional-style underwriting assessment evaluating a prospective real estate investment property, factoring in historical rent rolls, trailing twelve-month (T12) financials, and market risks.
+              An institutional-style underwriting assessment evaluating an active acquisition target by auditing historical rent rolls, normalizing trailing operations, and managing downside exposure.
             </p>
             <ul class="project-highlights">
-              <li>Audited rent rolls and lease terms to identify expiration cliffs, tenant credit risks, and mark-to-market upside potential.</li>
-              <li>Normalized historical T12 operational expenses, adjusting for non-recurring maintenance and real estate tax reassessments post-sale.</li>
-              <li>Formulated an Investment Committee Underwriting Memorandum outlining return benchmarks, debt covenants, and downside mitigations.</li>
+              <li>Audited tenant lease abstracts and rent rolls to assess rollover risk, in-place vs. market rents, and tenant creditworthiness.</li>
+              <li>Normalized trailing twelve-month (T12) operating statements, adjusting for non-recurring capital repairs and tax resets post-acquisition.</li>
+              <li>Drafted a concise Investment Committee Memorandum outlining return thresholds, loan covenants, and key market risk factors.</li>
             </ul>
             <div class="tech-stack-row">
-              <span class="tech-tag">Rent Roll Audit</span>
+              <span class="tech-tag">Rent Roll Diligence</span>
               <span class="tech-tag">T12 Normalization</span>
               <span class="tech-tag">Underwriting Memo</span>
-              <span class="tech-tag">Risk Assessment</span>
+              <span class="tech-tag">Market Comps</span>
             </div>
           </div>
           <div class="project-links">
@@ -751,30 +765,30 @@
           </div>
         </article>
 
-        <!-- Project 3: Excel Financial Accounting Project -->
+        <!-- Project 3: Excel Business Analytics & Multi-Tier Pivot Modeling (assignment11.xlsx) -->
         <article class="project-card">
           <div>
             <div class="project-top">
-              <h3 class="project-title">3. Comprehensive Financial Accounting Model</h3>
-              <span class="project-badge">Financial Accounting</span>
+              <h3 class="project-title">3. Excel Business Analytics & Multi-Tier Pivot Modeling</h3>
+              <span class="project-badge">Data Analytics & Pivot Tables</span>
             </div>
             <p class="project-summary">
-              An integrated Excel-based corporate financial accounting engine built to process journal entries through adjusted trial balances directly into fully integrated financial statements.
+              An advanced analytical Excel model structuring multi-tier transaction datasets, dynamic PivotTables, regional sales trends, and product margin breakdowns.
             </p>
             <ul class="project-highlights">
-              <li>Structured General Ledger and Trial Balance workflows ensuring dynamic balance validation and error checking across all debit/credit schedules.</li>
-              <li>Linked Income Statement, Balance Sheet, and Cash Flow Statement dynamically via cash balances, depreciation, and retained earnings.</li>
-              <li>Conducted full DuPont Framework liquidity, efficiency, and solvency ratio diagnostics to measure corporate health.</li>
+              <li>Constructed cross-regional sales aggregation tables analyzing monthly performance across multiple states (California, Oregon, Washington) totaling over $116K in volume.</li>
+              <li>Implemented sub-category profitability diagnostics across extensive retail order datasets, isolating net profit margins (`Net Profit / Sales`), order quantities, and negative-margin SKUs.</li>
+              <li>Utilized structured field references, dynamic filters, and clean summary reporting to convert raw transaction records into strategic managerial insights.</li>
             </ul>
             <div class="tech-stack-row">
-              <span class="tech-tag">3-Statement Model</span>
-              <span class="tech-tag">General Ledger</span>
-              <span class="tech-tag">Trial Balance</span>
-              <span class="tech-tag">Ratio Analysis</span>
+              <span class="tech-tag">Microsoft Excel</span>
+              <span class="tech-tag">PivotTables & Slicers</span>
+              <span class="tech-tag">Profit Margin Modeling</span>
+              <span class="tech-tag">Regional Sales Analysis</span>
             </div>
           </div>
           <div class="project-links">
-            <button class="btn btn-primary" onclick="openModal('accounting')">View Financial Ledger</button>
+            <button class="btn btn-primary" onclick="openModal('excelAnalytics')">View Model Summary</button>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub ↗</a>
           </div>
         </article>
@@ -800,7 +814,7 @@
     <div class="container footer-content">
       <div>
         <p style="font-weight: 600; color: var(--text-main);">Anthony Videtto</p>
-        <p>Real Estate Finance & Underwriting • Ready for New Opportunities</p>
+        <p>Finance & Real Estate • Building Long-Term Industry Partnerships</p>
       </div>
       <ul class="contact-links">
         <li><a href="mailto:anthony@example.com">Email Me</a></li>
@@ -871,7 +885,7 @@
             </tbody>
           </table>
           <p style="font-size: 0.85rem; color: var(--text-muted);">
-            * Full spreadsheet features dynamic Excel formula auditing and two-way sensitivity matrices.
+            * Built with dynamic Excel formulas, debt schedules, and sensitivity tables.
           </p>
         `
       },
@@ -909,35 +923,35 @@
           </table>
         `
       },
-      accounting: {
-        title: "Financial Accounting Engine Structure",
+      excelAnalytics: {
+        title: "Excel Business Analytics & Pivot Table Modeling (Assignment 11)",
         html: `
           <p style="margin-bottom: 12px; color: var(--text-muted);">
-            Architecture of the automated three-statement model and trial balance workbook.
+            Breakdown of data aggregation worksheets, category profitability, and regional sales distribution.
           </p>
           <table class="modal-metric-table">
             <thead>
               <tr>
-                <th>Workbook Section</th>
-                <th>Core Function & Integration</th>
+                <th>Worksheet Module</th>
+                <th>Analytical Focus & Key Results</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Journal & Ledger</td>
-                <td>Double-entry debit/credit ledger with automatic balance checks</td>
+                <td>Regional Coffee Sales Pivot</td>
+                <td>Aggregated monthly revenue across California ($35.4K), Oregon ($37.9K), and Washington ($42.8K) totaling $116,175.</td>
               </tr>
               <tr>
-                <td>Adjusted Trial Balance</td>
-                <td>Accruals, prepaid expenses, and depreciation scheduling</td>
+                <td>Sub-Category Profitability</td>
+                <td>Evaluated volume, sales, and net margins across office supplies & storage categories, identifying high-margin drivers (Paper, Envelopes) vs negative-margin drags (Appliances, Supplies).</td>
               </tr>
               <tr>
-                <td>Integrated Statements</td>
-                <td>Net income flow-through to retained earnings & CFO cash sweep</td>
+                <td>Detailed Orders Ledger</td>
+                <td>Calculated transaction-level margins with <code>[Net Profit] / [Sales]</code> ratios across customer segments and regions.</td>
               </tr>
               <tr>
-                <td>DuPont Analysis</td>
-                <td>Multi-step breakdown of ROE into margins, turnover, and leverage</td>
+                <td>Dynamic Filtering & Slicing</td>
+                <td>Implemented multi-dimensional pivot tables for rapid executive reporting and regional variance analysis.</td>
               </tr>
             </tbody>
           </table>
