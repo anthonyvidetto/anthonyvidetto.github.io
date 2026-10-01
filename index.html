@@ -159,9 +159,36 @@
       transform: rotate(15deg);
     }
 
-    /* Hero & Personal Statement */
+    /* Hero & Profile Layout */
     .hero {
-      padding: 60px 0 40px;
+      padding: 60px 0 30px;
+    }
+
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 24px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-avatar-wrapper {
+      flex-shrink: 0;
+    }
+
+    .hero-headshot {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--primary);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+      background-color: var(--surface-card);
+      display: block;
     }
 
     .hero-meta {
@@ -200,11 +227,10 @@
     }
 
     .hero h1 {
-      font-size: 2.75rem;
+      font-size: 2.6rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 24px;
+      line-height: 1.18;
     }
 
     .hero h1 span {
@@ -576,6 +602,15 @@
     }
 
     @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .hero-headshot {
+        width: 120px;
+        height: 120px;
+      }
       .hero h1 {
         font-size: 2.1rem;
       }
@@ -614,15 +649,22 @@
   </header>
 
   <main class="container">
-    <!-- Hero / Headline -->
+    <!-- Hero / Headline with Headshot -->
     <div class="hero">
-      <div class="hero-meta">
-        <div class="status-pill">
-          <span class="status-indicator"></span>
-          Undergraduate in Finance & Real Estate
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="hero-meta">
+            <div class="status-pill">
+              <span class="status-indicator"></span>
+              Undergraduate in Finance & Real Estate
+            </div>
+          </div>
+          <h1>Bridging Quantitative Analysis, <span>Market Dynamics</span>, & Relationship Building.</h1>
+        </div>
+        <div class="hero-avatar-wrapper">
+          <img src="Headshot.jpg" alt="Anthony Videtto Headshot" class="hero-headshot">
         </div>
       </div>
-      <h1>Bridging Quantitative Analysis, <span>Market Dynamics</span>, & Relationship Building.</h1>
     </div>
 
     <!-- REQUIRED SECTION 1: Personal Statement -->
